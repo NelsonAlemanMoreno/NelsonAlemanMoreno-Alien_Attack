@@ -1,0 +1,78 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/alpha_echo.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/SpaceEnd.jpg" type="Texture" id=2]
+[ext_resource path="res://IU/End_game.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 128
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 64
+outline_color = Color( 0.701961, 0.0470588, 0.0470588, 1 )
+font_data = ExtResource( 1 )
+
+[node name="End_game" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -600.0
+margin_top = -351.5
+margin_right = 600.0
+margin_bottom = 351.5
+texture = ExtResource( 2 )
+stretch_mode = 1
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -342.5
+margin_top = -200.0
+margin_right = 342.5
+margin_bottom = -56.0
+custom_colors/font_color = Color( 0.309804, 0.027451, 0.654902, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 1, 0.984314, 0.027451, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Game Over"
+
+[node name="Play_again" type="Button" parent="."]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 50.0
+margin_top = 150.0
+margin_right = 400.0
+margin_bottom = 230.0
+custom_colors/font_color = Color( 0.309804, 0.027451, 0.654902, 1 )
+custom_colors/font_color_hover = Color( 1, 0.827451, 0.0392157, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Play Again"
+
+[node name="Quit" type="Button" parent="."]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -400.0
+margin_top = 150.0
+margin_right = -50.0
+margin_bottom = 230.0
+custom_colors/font_color = Color( 0.309804, 0.027451, 0.654902, 1 )
+custom_colors/font_color_hover = Color( 1, 0.827451, 0.0392157, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Quit"
+
+[connection signal="pressed" from="Play_again" to="." method="_on_Play_again_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]
